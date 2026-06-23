@@ -297,16 +297,39 @@ function openTopicModal(id) {
 }
 
 function setupTabs(modal) {
-    modal.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            modal.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            modal.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+    // Find the specific container holding the buttons and panels
+    const container = modal.querySelector('.tabs-container')?.parentElement || modal;
+
+    container.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const targetTab = this.getAttribute('data-tab');
+            if (!targetTab) return;
+
+            // 1. Reset all buttons inside this container only
+            container.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('active');
+            });
+
+            // 2. Hide all panels inside this container only
+            container.querySelectorAll('.tab-panel').forEach(p => {
+                p.classList.add('hidden');
+            });
+
+            // 3. Activate the clicked button
             this.classList.add('active');
-            const panel = modal.querySelector(`[data-tab="${this.dataset.tab}"]`);
-            if (panel) panel.classList.remove('hidden');
+
+            // 4. Reveal the exact matching panel
+            const matchingPanel = container.querySelector(`.tab-panel[data-tab="${targetTab}"]`);
+            if (matchingPanel) {
+                matchingPanel.classList.remove('hidden');
+            }
         });
     });
 }
+
 
 function generateLearn(t) {
     return `
