@@ -205,14 +205,14 @@ function renderPastPapers() {
                     <h2 class="pp-title">Past Papers</h2>
                     <p class="pp-subtitle">Select a tier to access Edexcel GCSE Mathematics papers with mark schemes and worked solutions.</p>
                     <div class="tier-grid">
-                        <div class="tier-card" onclick="ppState='higher';renderPastPapers()">
-                            <h3>Higher Tier</h3>
-                            <span class="tier-badge badge-higher">Grades 4–9</span>
-                            <p class="tier-range">Papers 1, 2 & 3</p>
-                        </div>
                         <div class="tier-card" onclick="ppState='foundation';renderPastPapers()">
                             <h3>Foundation Tier</h3>
                             <span class="tier-badge badge-foundation">Grades 1–5</span>
+                            <p class="tier-range">Papers 1, 2 & 3</p>
+                        </div>
+                        <div class="tier-card" onclick="ppState='higher';renderPastPapers()">
+                            <h3>Higher Tier</h3>
+                            <span class="tier-badge badge-higher">Grades 4–9</span>
                             <p class="tier-range">Papers 1, 2 & 3</p>
                         </div>
                     </div>

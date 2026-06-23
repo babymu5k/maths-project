@@ -201,6 +201,7 @@
             display: flex;
             gap: 4px;
             overflow-x: auto;
+            overflow: hidden;
             border-top: 1px solid var(--border-light);
         }
 
