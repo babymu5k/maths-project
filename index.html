@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edexcel GCSE Mathematics | Revision Hub</title>
+    <title>Stem Portal | Revision Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,34 @@
     <header class="header">
         <div class="header-container">
             <a href="#" class="logo" onclick="navigateTo('topics'); showGrade('all')">
-                <span class="logo-mark">M</span>Edexcel Maths
+                <span class="logo-mark">
+                    <svg class="rubiks-cube" width="36" height="36" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Row 1 -->
+                        <rect x="0" y="0" width="40" height="40" rx="3" fill="#FF6B6B"/>
+                        <rect x="40" y="0" width="40" height="40" rx="3" fill="#4ECDC4"/>
+                        <rect x="80" y="0" width="40" height="40" rx="3" fill="#45B7D1"/>
+                        
+                        <!-- Row 2 -->
+                        <rect x="0" y="40" width="40" height="40" rx="3" fill="#FFD93D"/>
+                        <rect x="40" y="40" width="40" height="40" rx="3" fill="#FF6B6B"/>
+                        <rect x="80" y="40" width="40" height="40" rx="3" fill="#6C5CE7"/>
+                        
+                        <!-- Row 3 -->
+                        <rect x="0" y="80" width="40" height="40" rx="3" fill="#4ECDC4"/>
+                        <rect x="40" y="80" width="40" height="40" rx="3" fill="#FFD93D"/>
+                        <rect x="80" y="80" width="40" height="40" rx="3" fill="#FF6B6B"/>
+                        
+                        <!-- Black grid lines -->
+                        <line x1="40" y1="0" x2="40" y2="120" stroke="#1a1a1a" stroke-width="3"/>
+                        <line x1="80" y1="0" x2="80" y2="120" stroke="#1a1a1a" stroke-width="3"/>
+                        <line x1="0" y1="40" x2="120" y2="40" stroke="#1a1a1a" stroke-width="3"/>
+                        <line x1="0" y1="80" x2="120" y2="80" stroke="#1a1a1a" stroke-width="3"/>
+                        
+                        <!-- Outer border -->
+                        <rect x="0" y="0" width="120" height="120" rx="6" fill="none" stroke="#1a1a1a" stroke-width="4"/>
+                    </svg>
+                </span>
+                <span class="logo-text">Stem Portal</span>
             </a>
             <div class="search-wrapper">
                 <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -38,9 +65,8 @@
     </header>
 
     <main class="main-content" id="mainContent"></main>
-
     <div id="modalOverlay" class="modal-overlay hidden">
-        <div class="modal" id="modalContent"></div>
+        <div class="modal custom-scroll" id="modalContent"></div>
     </div>
 
     <script src="main.js">
